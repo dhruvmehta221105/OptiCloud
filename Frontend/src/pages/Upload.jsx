@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { CheckCircle2, ChevronDown, ChevronRight, Cloud, CloudUpload, FileCode2, Folder, ShieldCheck, Sparkles, X } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown, ChevronRight, Cloud, CloudUpload, FileCode2, Folder, ShieldCheck, Sparkles, X } from "lucide-react";
 import { Button, Footer, Notice, PageHeading } from "../components/ui/index.jsx";
 import { AsideStep, BoxIcon, WorkflowStep } from "../components/ui/steps.jsx";
 import { useNavigation } from "../context/NavigationContext.jsx";
