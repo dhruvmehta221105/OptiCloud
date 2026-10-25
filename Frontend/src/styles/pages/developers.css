@@ -1,7 +1,7 @@
 .developer-content { display: grid; gap: 14px; }
 .developer-stats { margin-top: 0; }
-.developer-hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 30px; padding: 26px; background: linear-gradient(120deg, #eff6ff, #fff 60%); border-color: #dbeafe; }
-.developer-icon,.tool-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; color: var(--accent); background: #dbeafe; }
+.developer-hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 30px; padding: 26px; background: linear-gradient(120deg, #fff1ed, #fff 60%); border-color: #fed7cc; }
+.developer-icon,.tool-icon { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; color: var(--accent); background: var(--accent-light); }
 .developer-hero h2 { margin: 14px 0 7px; font: 600 21px/1.3 var(--font-heading); color: var(--ink); }
 .developer-hero p,.developer-tool p,.project-next p { color: var(--muted); font-size: 13px; line-height: 1.65; margin: 0; max-width: 620px; }
 .developer-actions { display: flex; gap: 9px; margin-top: 18px; }

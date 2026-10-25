@@ -50,7 +50,7 @@
 .before-upload ul { padding-left: 13px; margin: 0 0 10px; }
 .before-upload li { color: #778a94; font-size: 8px; line-height: 1.45; margin: 5px 0; }
 .before-upload li::marker { color: var(--accent); }
-.privacy-card { display: flex; align-items: flex-start; gap: 8px; background: #eaf1f9; border-radius: 5px; padding: 11px; color: #7088a4; }
+.privacy-card { display: flex; align-items: flex-start; gap: 8px; background: #fff7f5; border: 1px solid #fed7cc; border-radius: 5px; padding: 11px; color: #725e59; }
 .privacy-card > svg { flex: 0 0 auto; }
 .privacy-card strong { color: #455e78; font-size: 8px; }
 .privacy-card p { color: #788a9d; font-size: 8px; line-height: 1.4; margin: 4px 0 0; }

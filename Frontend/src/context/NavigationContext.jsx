@@ -1,13 +1,24 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getPageFromPath, getPagePath } from "../navigation.js";
 
 const NavigationContext = createContext(null);
 
 export function NavigationProvider({ children }) {
-  const [page, setPage] = useState("Home");
+  const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const page = getPageFromPath(location.pathname);
+  const setPage = useCallback((nextPage) => {
+    navigate(getPagePath(nextPage));
+  }, [navigate]);
+  const value = useMemo(
+    () => ({ page, setPage, mobileOpen, setMobileOpen }),
+    [page, setPage, mobileOpen],
+  );
 
   return (
-    <NavigationContext.Provider value={{ page, setPage, mobileOpen, setMobileOpen }}>
+    <NavigationContext.Provider value={value}>
       {children}
     </NavigationContext.Provider>
   );

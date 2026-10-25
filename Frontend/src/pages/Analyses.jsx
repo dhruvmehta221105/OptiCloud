@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight, Check, ChevronRight, CircleHelp, Database, Gauge, Network, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button, Card, Footer, PageHeading } from "../components/ui/index.jsx";
+import { Badge, Button, Card, Footer, PageHeading } from "../components/ui/index.jsx";
 import { WorkflowStep } from "../components/ui/steps.jsx";
 import { useNavigation } from "../context/NavigationContext.jsx";
 import "../styles/pages/analyses.css";

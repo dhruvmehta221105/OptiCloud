@@ -1,9 +1,12 @@
-import { BookOpen, ChevronDown, ChevronRight, Cloud, Folder, Gauge, LayoutDashboard, MoreHorizontal, Settings, DollarSign, Code2 } from "lucide-react";
+import { BookOpen, ChevronDown, ChevronRight, Cloud, Folder, Gauge, Home, LayoutDashboard, MoreHorizontal, Settings, DollarSign, Code2 } from "lucide-react";
+import { NavLink } from "react-router-dom";
+import { getPagePath } from "../../navigation.js";
 
 const navGroups = [
   {
     label: "WORKSPACE",
     items: [
+      { label: "Home", icon: Home },
       { label: "Dashboard", icon: LayoutDashboard },
       { label: "Projects", icon: Folder },
       { label: "Developers", icon: Code2 },
@@ -29,7 +32,7 @@ export function BrandMark({ small = false }) {
   );
 }
 
-export function Sidebar({ page, setPage, mobileOpen, closeMobile }) {
+export function Sidebar({ page, mobileOpen, closeMobile }) {
   const isMobileOpen = mobileOpen;
 
   return (
@@ -39,18 +42,17 @@ export function Sidebar({ page, setPage, mobileOpen, closeMobile }) {
       )}
       <aside className={`sidebar${isMobileOpen ? " sidebar-open" : ""}`}>
         <div className="brand-header">
-          <a
+          <NavLink
             className="brand"
-            href="#home"
-            onClick={(event) => {
-              event.preventDefault();
-              setPage("Dashboard");
+            to="/"
+            aria-label="OptiCloud home"
+            onClick={() => {
               closeMobile();
             }}
           >
             <BrandMark />
             <span>OptiCloud</span>
-          </a>
+          </NavLink>
           <button className="brand-collapse" aria-label="Collapse sidebar" onClick={closeMobile} title="Collapse">
             <ChevronRight size={14} />
           </button>
@@ -70,18 +72,18 @@ export function Sidebar({ page, setPage, mobileOpen, closeMobile }) {
             <div className="nav-group" key={groupIndex}>
               <p className="nav-label">{group.label}</p>
               {group.items.map(({ label, icon: Icon }) => (
-                <button
-                  type="button"
-                  className={`nav-link${page === label || (label === "Projects" && page.startsWith("Project:")) ? " active" : ""}`}
+                <NavLink
+                  to={getPagePath(label)}
+                  end={label === "Home"}
+                  className={({ isActive }) => `nav-link${isActive || (label === "Projects" && page.startsWith("Project:")) ? " active" : ""}`}
                   key={label}
                   onClick={() => {
-                    setPage(label);
                     closeMobile();
                   }}
                 >
                   <Icon size={16} strokeWidth={1.7} />
                   <span>{label}</span>
-                </button>
+                </NavLink>
               ))}
             </div>
           ))}

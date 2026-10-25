@@ -33,5 +33,5 @@ td:first-child > small { color: #87969f; margin: 0; }
 .step > span { display: block; font-size: 8px; font-weight: 600; color: var(--accent); margin-bottom: 5px; }
 .step > strong { font-size: 9px; color: #344955; }
 .step > p { font-size: 8px; color: #84939b; margin: 4px 0 0; }
-.connect-card { background: #eff6ff; border-color: #dce8fc; }
+.connect-card { background: #fff7f5; border-color: #fed7cc; }
 .connect-card p { color: #718790; font-size: 9px; line-height: 1.5; margin: 8px 0; max-width: 270px; }

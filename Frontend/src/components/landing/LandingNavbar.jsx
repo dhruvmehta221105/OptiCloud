@@ -4,9 +4,9 @@ import logoWordmark from "../../assets/landing/logo-opticloud.png";
 import chevronDown from "../../assets/landing/chevron-down.svg";
 
 const navLinks = [
-  { label: "Product", action: "Dashboard" },
+  { label: "Product", href: "#product" },
   { label: "Pricing", action: "Costs" },
-  { label: "Integrations", action: "Connect Infrastructure" },
+  { label: "Integrations", href: "#integrations" },
   { label: "Developers", action: "Developers" },
 ];
 
@@ -15,14 +15,12 @@ export function LandingNavbar({ onEnterApp, onNavigate }) {
 
   const handleNav = (link) => {
     setOpen(false);
-    if (link.action) {
-      onNavigate(link.action);
-      return;
-    }
     if (link.href) {
       const el = document.querySelector(link.href);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
     }
+    onNavigate(link.action);
   };
 
   return (
