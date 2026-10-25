@@ -1,0 +1,18 @@
+@"
+# Cursor
+.cursor/
+
+# Kilo Code
+.kilo/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+"@ | Set-Content .gitignore
