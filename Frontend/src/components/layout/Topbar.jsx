@@ -1,6 +1,6 @@
-import { ChevronRight, CircleHelp, Menu, Bell, Zap } from "lucide-react";
+import { ChevronRight, CircleHelp, Menu, Bell, Zap, Home } from "lucide-react";
 
-export function Topbar({ page, onMenu }) {
+export function Topbar({ page, onMenu, onHome }) {
   const labels = {
     Dashboard: "Dashboard",
     Projects: "Projects",
@@ -18,6 +18,11 @@ export function Topbar({ page, onMenu }) {
         <button className="mobile-menu" onClick={onMenu} aria-label="Open navigation">
           <Menu size={20} />
         </button>
+        {onHome && (
+          <button className="icon-button" aria-label="Go home" onClick={onHome}>
+            <Home size={17} />
+          </button>
+        )}
         <span>Workspace</span>
         <ChevronRight size={13} />
         <strong>{page.startsWith("Project:") ? `Projects / ${page.replace("Project:", "")}` : labels[page] || page}</strong>
