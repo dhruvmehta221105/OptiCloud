@@ -1,0 +1,4 @@
+.workflow-step { display: flex; align-items: center; gap: 6px; color: #82939c; font-size: 8px; white-space: nowrap; }
+.workflow-step > span { width: 16px; height: 16px; display: grid; place-items: center; border-radius: 50%; background: #f0f3f5; color: #8798a1; font-size: 8px; }
+.workflow-active { color: var(--accent); }
+.workflow-active > span { color: var(--accent); background: #edf3ff; }

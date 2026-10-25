@@ -1,0 +1,75 @@
+.context-row { display: flex; justify-content: space-between; align-items: center; margin: 19px 0 12px; gap: 14px; }
+.project-context,.last-analyzed { display: flex; align-items: center; gap: 8px; font-size: 9px; color: var(--muted); }
+.project-context strong { color: #334a57; font-weight: 600; }
+.context-icon { width: 21px; height: 21px; display: grid; place-items: center; background: #fff; color: var(--accent); border: 1px solid var(--line); border-radius: 4px; }
+.env-tag { display: inline-block; background: #f0f4f6; color: #687f8a; padding: 3px 6px; border-radius: 4px; font-size: 8px; font-weight: 500; }
+.env-staging { background: #fff6e9; color: #9b723b; }
+.last-analyzed { color: #7b8d97; font-size: 9px; }
+.last-analyzed svg { color: var(--accent); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.stat-card,.panel { background: #fff; border: 1px solid var(--line); border-radius: 6px; box-shadow: var(--shadow); }
+.stat-card { min-height: 94px; padding: 13px 14px 11px; display: flex; flex-direction: column; align-items: flex-start; }
+.stat-green { border-color: #d5e9e4; background: #eaf6f3; }
+.stat-label { width: 100%; display: flex; justify-content: space-between; align-items: center; color: #778993; font-size: 9px; }
+.stat-label svg { color: #8798a1; }
+.stat-green .stat-label svg { color: #087f70; }
+.stat-value { color: #263e4d; font: 600 23px/1.2 "Manrope", sans-serif; margin-top: 7px; letter-spacing: -.5px; }
+.stat-green .stat-value { color: #087f70; }
+.stat-detail { color: #81919a; font-size: 8px; margin-top: 5px; }
+.dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.panel { padding: 15px; }
+.panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.panel h2 { margin: 0; color: #263e4d; font-size: 11px; font-weight: 600; }
+.text-button { color: var(--accent); border: 0; background: transparent; padding: 0; display: inline-flex; align-items: center; gap: 4px; font-size: 9px; font-weight: 600; white-space: nowrap; }
+.text-button:hover { color: var(--accent-dark); }
+.panel-subtitle { color: #84939b; margin: 5px 0 0; font-size: 8px; }
+.cost-total { color: #2b4150; font: 600 16px "Manrope", sans-serif; margin: 12px 0 12px; }
+.cost-total > span:first-child { font: 400 9px "DM Sans", sans-serif; color: #84939b; }
+.estimate-tag { float: right; font: 400 8px "DM Sans", sans-serif; color: #738692; background: #f2f5f7; padding: 4px 6px; border-radius: 4px; margin-top: 2px; }
+.cost-bar { display: flex; gap: 2px; height: 11px; border-radius: 3px; overflow: hidden; margin-bottom: 11px; }
+.cost-bar span { display: block; }
+.bar-compute { background: #2563eb; flex: 51; }
+.bar-database { background: #648ca0; flex: 30; }
+.bar-storage { background: #9db6c2; flex: 11; }
+.bar-other { background: #d9e3e8; flex: 8; }
+.cost-legend { display: grid; gap: 7px; }
+.cost-legend > div { display: grid; grid-template-columns: 7px 1fr auto; align-items: center; color: #72848e; font-size: 8px; }
+.cost-legend strong { color: #394e5a; font-size: 8px; font-weight: 600; }
+.legend-dot { width: 5px; height: 5px; border-radius: 2px; }
+.dot-compute { background: #2563eb; }.dot-database { background: #648ca0; }.dot-storage { background: #9db6c2; }.dot-other { background: #d9e3e8; }
+.opportunities-panel { padding-bottom: 10px; }
+.opportunities-panel .panel-heading { margin-bottom: 7px; }
+.opportunity-row { min-height: 43px; display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #edf1f3; }
+.opportunity-icon { width: 21px; height: 21px; flex: 0 0 auto; display: grid; place-items: center; color: var(--accent); background: #edf3ff; border: 1px solid #e0eaff; border-radius: 50%; }
+.opportunity-copy { display: grid; gap: 3px; min-width: 0; flex: 1; }
+.opportunity-copy strong { color: #344955; font-size: 9px; font-weight: 600; }
+.opportunity-copy strong small { color: #8797a0; font-size: 8px; font-weight: 400; margin-left: 4px; }
+.opportunity-copy > span { color: #81919a; font-size: 8px; }
+.opportunity-badge { flex: 0 0 auto; color: #a17131; background: #fff3df; padding: 4px 5px; border-radius: 4px; font-size: 8px; }
+.badge-green { color: #08756e; background: #e8f5f1; }
+.panel-footnote { color: #84939b; font-size: 8px; margin: 9px 0 0; }
+.next-step-panel h3 { font-size: 11px; color: #2b414e; margin: 11px 0 5px; }
+.tag-row { display: flex; align-items: center; gap: 5px; margin-top: 7px; }
+.priority-tag,.cost-tag { font-size: 8px; padding: 3px 5px; border-radius: 4px; }
+.priority-tag { color: #ba6655; background: #fff0ed; }
+.cost-tag { color: #2458b8; background: #edf3ff; }
+.finding-code { color: #8797a0; font-size: 8px; }
+.next-step-panel > p { color: #798b95; font-size: 9px; line-height: 1.55; margin: 0; max-width: 95%; }
+.next-step-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; }
+.next-step-bottom > strong { color: #087f70; font-size: 9px; font-weight: 600; }
+.next-step-bottom .button { min-height: 28px; font-size: 8px; }
+.recent-panel { padding-bottom: 0; }
+.recent-panel .panel-heading { margin-bottom: 6px; }
+.analysis-row { min-height: 43px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #edf1f3; }
+.file-icon { width: 20px; height: 20px; background: #f3f6f8; color: #8a9ba4; display: grid; place-items: center; border-radius: 4px; }
+.analysis-copy,.analysis-result { display: grid; gap: 3px; }
+.analysis-copy { flex: 1; min-width: 0; }
+.analysis-copy strong { font-size: 9px; font-weight: 500; color: #334955; }
+.analysis-copy small,.analysis-result small { font-size: 8px; color: #87969f; }
+.analysis-result { justify-items: end; }
+.status-tag { background: #e9f5f1; color: #288174; border-radius: 4px; padding: 3px 5px; font-size: 8px; }
+.analysis-chevron { color: #9baab2; }
+.recent-footer { color: #84939b; font-size: 8px; padding: 9px 0; }
+.notice { display: flex; gap: 8px; align-items: flex-start; padding: 10px 12px; margin-top: 13px; color: #728691; background: #eaf1f9; border: 1px solid #e3ecf6; border-radius: 5px; font-size: 8px; line-height: 1.5; }
+.notice svg { color: #7896ba; flex: 0 0 auto; }
+.footer { display: flex; justify-content: space-between; color: #9aa8af; font-size: 8px; padding: 16px 0 0; }

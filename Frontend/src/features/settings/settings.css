@@ -1,0 +1,8 @@
+.settings-panel { max-width: 680px; padding: 18px; }
+.settings-panel h2 { margin-bottom: 8px; }
+.setting-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 0; border-bottom: 1px solid #edf1f3; }
+.setting-row > span { display: grid; gap: 4px; }
+.setting-row strong { color: #3b515e; font-size: 10px; }
+.setting-row small { color: #84939b; font-size: 8px; }
+.setting-row input,.setting-row select { width: 190px; padding: 7px 9px; color: #475f6a; background: white; border: 1px solid #dfe7eb; border-radius: 4px; font-size: 9px; }
+.settings-panel > .button { margin-top: 15px; }
