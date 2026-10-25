@@ -1,8 +1,19 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+
+# Environment variables
 .env
 .env.*
-.env.example
+!.env.example
+
+# VS Code
 .vscode/
-.cursor
-.kilo
+
+# Cursor
+.cursor/
+
+# Kilo Code
+.kilo/
