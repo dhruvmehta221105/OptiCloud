@@ -1,4 +1,4 @@
-import { BookOpen, Bell, ChevronDown, ChevronRight, Cloud, CircleHelp, Folder, Gauge, LayoutDashboard, Menu, MoreHorizontal, Settings } from "lucide-react";
+import { BookOpen, ChevronDown, ChevronRight, Cloud, Folder, Gauge, LayoutDashboard, MoreHorizontal, Settings, DollarSign, Code2 } from "lucide-react";
 
 const navGroups = [
   {
@@ -6,12 +6,14 @@ const navGroups = [
     items: [
       { label: "Dashboard", icon: LayoutDashboard },
       { label: "Projects", icon: Folder },
-      { label: "Connect infrastructure", icon: Cloud },
+      { label: "Developers", icon: Code2 },
+      { label: "Connect Infrastructure", icon: Cloud },
       { label: "Analyses", icon: Gauge },
+      { label: "Costs", icon: DollarSign },
     ],
   },
   {
-    label: " ",
+    label: "SETTINGS",
     items: [
       { label: "Settings", icon: Settings },
       { label: "Documentation", icon: BookOpen },
@@ -22,20 +24,37 @@ const navGroups = [
 export function BrandMark({ small = false }) {
   return (
     <span className={`brand-mark${small ? " brand-mark-small" : ""}`} aria-hidden="true">
-      <Cloud size={small ? 15 : 19} strokeWidth={2.1} />
+      <Cloud size={small ? 15 : 20} strokeWidth={2} />
     </span>
   );
 }
 
 export function Sidebar({ page, setPage, mobileOpen, closeMobile }) {
+  const isMobileOpen = mobileOpen;
+
   return (
     <>
-      {mobileOpen && <button className="sidebar-backdrop" aria-label="Close menu" onClick={closeMobile} />}
-      <aside className={`sidebar${mobileOpen ? " sidebar-open" : ""}`}>
-        <a className="brand" href="#dashboard" onClick={() => setPage("Dashboard")}>
-          <BrandMark />
-          <span>OptiCloud</span>
-        </a>
+      {isMobileOpen && (
+        <button className="sidebar-backdrop" aria-label="Close menu" onClick={closeMobile} />
+      )}
+      <aside className={`sidebar${isMobileOpen ? " sidebar-open" : ""}`}>
+        <div className="brand-header">
+          <a
+            className="brand"
+            href="#home"
+            onClick={(event) => {
+              event.preventDefault();
+              setPage("Dashboard");
+              closeMobile();
+            }}
+          >
+            <BrandMark />
+            <span>OptiCloud</span>
+          </a>
+          <button className="brand-collapse" aria-label="Collapse sidebar" onClick={closeMobile} title="Collapse">
+            <ChevronRight size={14} />
+          </button>
+        </div>
 
         <button className="workspace-switcher" type="button">
           <span className="workspace-avatar">A</span>
@@ -49,18 +68,18 @@ export function Sidebar({ page, setPage, mobileOpen, closeMobile }) {
         <nav aria-label="Main navigation">
           {navGroups.map((group, groupIndex) => (
             <div className="nav-group" key={groupIndex}>
-              {group.label.trim() && <p className="nav-label">{group.label}</p>}
+              <p className="nav-label">{group.label}</p>
               {group.items.map(({ label, icon: Icon }) => (
                 <button
                   type="button"
-                  className={`nav-link${page === label ? " active" : ""}`}
+                  className={`nav-link${page === label || (label === "Projects" && page.startsWith("Project:")) ? " active" : ""}`}
                   key={label}
                   onClick={() => {
                     setPage(label);
                     closeMobile();
                   }}
                 >
-                  <Icon size={16} strokeWidth={1.8} />
+                  <Icon size={16} strokeWidth={1.7} />
                   <span>{label}</span>
                 </button>
               ))}
