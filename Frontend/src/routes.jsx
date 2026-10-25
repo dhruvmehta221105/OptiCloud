@@ -6,24 +6,15 @@ import { Costs } from "./pages/Costs.jsx";
 import { Settings } from "./pages/Settings.jsx";
 import { Documentation } from "./pages/Documentation.jsx";
 import { Developers } from "./pages/Developers.jsx";
-import { ProjectDetails } from "./pages/ProjectDetails.jsx";
+import { pagePaths } from "./navigation.js";
 
 export const routes = [
-  { path: "Dashboard", component: Dashboard },
-  { path: "Projects", component: Projects },
-  { path: "Developers", component: Developers },
-  { path: "Connect Infrastructure", component: Upload },
-  { path: "Analyses", component: Analyses },
-  { path: "Costs", component: Costs },
-  { path: "Settings", component: Settings },
-  { path: "Documentation", component: Documentation },
+  { path: "Dashboard", url: pagePaths.Dashboard, component: Dashboard },
+  { path: "Projects", url: pagePaths.Projects, component: Projects },
+  { path: "Developers", url: pagePaths.Developers, component: Developers },
+  { path: "Connect Infrastructure", url: pagePaths["Connect Infrastructure"], component: Upload },
+  { path: "Analyses", url: pagePaths.Analyses, component: Analyses },
+  { path: "Costs", url: pagePaths.Costs, component: Costs },
+  { path: "Settings", url: pagePaths.Settings, component: Settings },
+  { path: "Documentation", url: pagePaths.Documentation, component: Documentation },
 ];
-
-export const defaultRoute = "Home";
-
-export function getProjectRoute(page) {
-  if (!page.startsWith("Project:")) return null;
-  return routes.find((route) => route.path === "Project details");
-}
-
-routes.push({ path: "Project details", component: ProjectDetails });
