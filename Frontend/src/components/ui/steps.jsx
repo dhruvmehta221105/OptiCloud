@@ -1,5 +1,5 @@
 import { HardDrive } from "lucide-react";
-import "./steps.css";
+import "../../styles/pages/steps.css";
 
 export function BoxIcon() {
   return <span className="box-icon" aria-hidden="true"><HardDrive size={17} /></span>;

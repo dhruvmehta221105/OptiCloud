@@ -1,8 +1,10 @@
 import { ArrowDownUp, ArrowRight, CheckCircle2, ChevronRight, FileCode2, Folder, Gauge, HardDrive, Network, TrendingDown, Upload, Zap } from "lucide-react";
-import { Button, Footer, Notice, PageHeading, StatCard } from "../../components/shared/ui.jsx";
-import "./dashboard.css";
+import { Button, Footer, Notice, PageHeading, StatCard } from "../components/ui/index.jsx";
+import { useNavigation } from "../context/NavigationContext.jsx";
+import "../styles/pages/dashboard.css";
 
-export function Dashboard({ setPage }) {
+export function Dashboard() {
+  const { setPage } = useNavigation();
   return (
     <>
       <PageHeading

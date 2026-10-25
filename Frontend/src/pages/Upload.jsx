@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
 import { CheckCircle2, ChevronDown, ChevronRight, Cloud, CloudUpload, FileCode2, Folder, ShieldCheck, Sparkles, X } from "lucide-react";
-import { Button, Footer, Notice, PageHeading } from "../../components/shared/ui.jsx";
-import { AsideStep, BoxIcon, WorkflowStep } from "../../components/shared/steps.jsx";
-import "./upload.css";
+import { Button, Footer, Notice, PageHeading } from "../components/ui/index.jsx";
+import { AsideStep, BoxIcon, WorkflowStep } from "../components/ui/steps.jsx";
+import { useNavigation } from "../context/NavigationContext.jsx";
+import "../styles/pages/upload.css";
 
-export function UploadPage({ setPage }) {
+export function Upload() {
+  const { setPage } = useNavigation();
   const inputRef = useRef(null);
   const [files, setFiles] = useState([
     { name: "atlas-prod-v12.tf", size: "18 KB" },
