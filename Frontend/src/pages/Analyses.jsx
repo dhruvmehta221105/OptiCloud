@@ -1,45 +1,46 @@
 import { useState } from "react";
 import { ArrowRight, Check, ChevronRight, CircleHelp, Database, Gauge, Network, Sparkles } from "lucide-react";
-import { Button, CodePanel, Footer, PageHeading } from "../../components/shared/ui.jsx";
-import { WorkflowStep } from "../../components/shared/steps.jsx";
-import "./analyses.css";
+import { Button, CodePanel, Footer, PageHeading } from "../components/ui/index.jsx";
+import { WorkflowStep } from "../components/ui/steps.jsx";
+import { useNavigation } from "../context/NavigationContext.jsx";
+import "../styles/pages/analyses.css";
 
-const findings = [
-  {
-    title: "Review oversized application instances",
-    code: "OC-104",
-    category: "Cost efficiency",
-    priority: "High priority",
-    savings: "$420 / month",
-    description:
-      "Three m5.2xlarge workers are declared for the API tier. Review a smaller instance size against your workload.",
-    icon: Gauge,
-  },
-  {
-    title: "Right-size managed database storage",
-    code: "OC-082",
-    category: "Cost efficiency",
-    priority: "Medium",
-    savings: "$126 / month",
-    description:
-      "Allocated storage is higher than current usage. Consider a smaller starting allocation with autoscaling enabled.",
-    icon: Database,
-  },
-  {
-    title: "Improve resilience across availability zones",
-    code: "OC-061",
-    category: "Architecture",
-    priority: "Medium",
-    savings: "Resilience",
-    description:
-      "A production service runs in a single availability zone. Distribute capacity to reduce the impact of a zone outage.",
-    icon: Network,
-  },
-];
-
-export function AnalysesPage({ setPage }) {
+export function Analyses() {
+  const { setPage } = useNavigation();
   const [selected, setSelected] = useState(0);
   const [reviewed, setReviewed] = useState(false);
+  const findings = [
+    {
+      title: "Review oversized application instances",
+      code: "OC-104",
+      category: "Cost efficiency",
+      priority: "High priority",
+      savings: "$420 / month",
+      description:
+        "Three m5.2xlarge workers are declared for the API tier. Review a smaller instance size against your workload.",
+      icon: Gauge,
+    },
+    {
+      title: "Right-size managed database storage",
+      code: "OC-082",
+      category: "Cost efficiency",
+      priority: "Medium",
+      savings: "$126 / month",
+      description:
+        "Allocated storage is higher than current usage. Consider a smaller starting allocation with autoscaling enabled.",
+      icon: Database,
+    },
+    {
+      title: "Improve resilience across availability zones",
+      code: "OC-061",
+      category: "Architecture",
+      priority: "Medium",
+      savings: "Resilience",
+      description:
+        "A production service runs in a single availability zone. Distribute capacity to reduce the impact of a zone outage.",
+      icon: Network,
+    },
+  ];
   const finding = findings[selected];
   const FindingIcon = finding.icon;
   return (

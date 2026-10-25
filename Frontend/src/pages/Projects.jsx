@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { ArrowDownUp, ArrowRight, ArrowUpRight, ChevronDown, Folder, HardDrive, ListFilter, Plus, Search, TrendingDown } from "lucide-react";
-import { Button, Footer, Notice, PageHeading, StatCard } from "../../components/shared/ui.jsx";
-import "./projects.css";
+import { Button, Footer, Notice, PageHeading, StatCard } from "../components/ui/index.jsx";
+import { useNavigation } from "../context/NavigationContext.jsx";
+import "../styles/pages/projects.css";
 
 const projects = [
   {
@@ -42,7 +43,8 @@ const projects = [
   },
 ];
 
-export function ProjectsPage({ setPage }) {
+export function Projects() {
+  const { setPage } = useNavigation();
   const [query, setQuery] = useState("");
   const [environment, setEnvironment] = useState("All environments");
   const [sortNewest, setSortNewest] = useState(true);

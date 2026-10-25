@@ -31,7 +31,26 @@ export function StatCard({ label, value, detail, icon: Icon, tone }) {
 }
 
 export function CodePanel({ title, code, changed }) {
-  return <div className="code-panel"><div className={`code-title${changed ? " code-title-green" : ""}`}>{title}<button aria-label="Copy code"><Code2 size={13} /></button></div><pre>{code.map((line, index) => <div className={changed && index === 2 ? "code-changed" : !changed && index === 2 ? "code-removed" : ""} key={index}><span>{String(index + 1).padStart(2, "0")}</span>{line}</div>)}</pre><small>{changed ? "Proposed configuration" : "Uploaded configuration"}</small></div>;
+  return (
+    <div className="code-panel">
+      <div className={`code-title${changed ? " code-title-green" : ""}`}>
+        {title}
+        <button aria-label="Copy code"><Code2 size={13} /></button>
+      </div>
+      <pre>
+        {code.map((line, index) => (
+          <div
+            className={changed && index === 2 ? "code-changed" : !changed && index === 2 ? "code-removed" : ""}
+            key={index}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            {line}
+          </div>
+        ))}
+      </pre>
+      <small>{changed ? "Proposed configuration" : "Uploaded configuration"}</small>
+    </div>
+  );
 }
 
 export function Notice({ children }) {
@@ -39,5 +58,10 @@ export function Notice({ children }) {
 }
 
 export function Footer() {
-  return <footer className="footer"><span>OptiCloud · Infrastructure clarity, before the next deploy.</span><span>Estimates, not live AWS billing</span></footer>;
+  return (
+    <footer className="footer">
+      <span>OptiCloud · Infrastructure clarity, before the next deploy.</span>
+      <span>Estimates, not live AWS billing</span>
+    </footer>
+  );
 }
