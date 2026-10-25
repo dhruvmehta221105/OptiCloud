@@ -1,24 +1,36 @@
-import { ChevronRight, CircleHelp, Menu, Bell } from "lucide-react";
+import { ChevronRight, CircleHelp, Menu, Bell, Zap } from "lucide-react";
 
 export function Topbar({ page, onMenu }) {
+  const labels = {
+    Dashboard: "Dashboard",
+    Projects: "Projects",
+    Developers: "Developer hub",
+    "Connect Infrastructure": "Connect Infrastructure",
+    Analyses: "Analyses",
+    Costs: "Cloud Costs",
+    Settings: "Settings",
+    Documentation: "Documentation",
+  };
+
   return (
     <header className="topbar">
       <div className="breadcrumbs">
         <button className="mobile-menu" onClick={onMenu} aria-label="Open navigation">
-          <Menu size={19} />
+          <Menu size={20} />
         </button>
         <span>Workspace</span>
         <ChevronRight size={13} />
-        <strong>{page === "Connect infrastructure" ? "Connect infrastructure" : page}</strong>
+        <strong>{page.startsWith("Project:") ? `Projects / ${page.replace("Project:", "")}` : labels[page] || page}</strong>
       </div>
       <div className="topbar-actions">
         <span className="demo-pill">Demo data</span>
         <span className="region-label">USD · us-east-1</span>
         <span className="topbar-divider" />
         <button className="icon-button" aria-label="Help"><CircleHelp size={17} /></button>
-        <button className="icon-button notification-button" aria-label="Notifications">
-          <Bell size={17} /><i />
+        <button className="icon-button notification-button" position="relative" aria-label="Notifications">
+          <Bell size={17} /><span className="notification-dot" aria-hidden="true" />
         </button>
+        <button className="icon-button" aria-label="Quick actions"><Zap size={17} /></button>
       </div>
     </header>
   );

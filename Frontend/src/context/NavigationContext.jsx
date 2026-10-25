@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const NavigationContext = createContext(null);
 
 export function NavigationProvider({ children }) {
-  const [page, setPage] = useState("Dashboard");
+  const [page, setPage] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
