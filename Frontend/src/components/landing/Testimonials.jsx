@@ -1,7 +1,3 @@
-import gabriel from "../../assets/landing/testimonial-gabriel.png";
-import buzz from "../../assets/landing/testimonial-buzz.png";
-import acmeStar from "../../assets/landing/logo-acme-star.svg";
-
 export function Testimonials() {
   return (
     <section className="lp-testimonials">
@@ -12,36 +8,30 @@ export function Testimonials() {
             <span className="lp-iso lp-iso-front" />
           </div>
           <p>
-            Cloudhub has emerged as an essential asset for the team at Patreon design. Amidst an
-            accelerated expanding organization in which the product undergoes rapid changes,
-            Campsite enables us to maintain visibility on what&apos;s transpiring across various
-            teams — impeccably aligning with our pre-existing procedures.
+            OptiCloud helped us identify $618 in monthly savings across our AWS infrastructure. The Terraform analysis caught oversized instances we would have missed.
           </p>
           <div className="lp-quote-author">
-            <img src={gabriel} alt="" width={40} height={40} />
+            <span className="lp-feedback-icon">P</span>
             <div>
-              <strong>Gabriel Valdivia</strong>
-              <span>Principal Product Designer, Patreon</span>
+              <strong>Platform Engineering Team</strong>
+              <span>Production workloads · 42 resources</span>
             </div>
           </div>
         </article>
 
         <article className="lp-quote">
           <div className="lp-quote-mark lp-quote-mark-dark" aria-hidden="true">
-            <img src={acmeStar} alt="" width={39} height={39} />
+            <span className="lp-iso lp-iso-back" />
+            <span className="lp-iso lp-iso-front" />
           </div>
           <p>
-            Cloudhub has demonstrated exceptional worth in preserving open communication among
-            designers regarding their current endeavors, a challenge that previously impeded our
-            progress. It continually stands as a distinctive platform guiding our dialogue towards
-            imagination and consistent review, an element I highly value. Moreover, it has
-            accelerated our propensity for early-stage feedback beyond my expectations.
+            The AI-powered recommendations are clear and actionable. We reduced our EBS storage costs by right-sizing unattached volumes without any downtime.
           </p>
           <div className="lp-quote-author">
-            <img src={buzz} alt="" width={40} height={40} />
+            <span className="lp-feedback-icon">D</span>
             <div>
-              <strong>Buzz Usborne</strong>
-              <span>Principal Designer, Buildkite</span>
+              <strong>DevOps Team</strong>
+              <span>Staging environment · 24 resources</span>
             </div>
           </div>
         </article>

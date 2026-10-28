@@ -1,27 +1,24 @@
 import bannerCube from "../../assets/landing/banner-cube.svg";
 import bannerChevron from "../../assets/landing/banner-chevron.svg";
-import iconMentions from "../../assets/landing/icon-mentions.svg";
-import iconPolls from "../../assets/landing/icon-polls.svg";
-import iconResolve from "../../assets/landing/icon-resolve.svg";
-import avatar1 from "../../assets/landing/banner-avatar-1.png";
-import avatar2 from "../../assets/landing/banner-avatar-2.png";
-import avatar3 from "../../assets/landing/banner-avatar-3.png";
+import iconSavings from "../../assets/landing/icon-mentions.svg";
+import iconPerformance from "../../assets/landing/icon-polls.svg";
+import iconArchitecture from "../../assets/landing/icon-resolve.svg";
 
 const cards = [
   {
-    icon: iconMentions,
-    title: "Mentions",
-    body: "Mention anyone on your team to include them in a post.",
+    icon: iconSavings,
+    title: "Cost efficiency",
+    body: "Right-size compute and optimize storage to reduce monthly spend.",
   },
   {
-    icon: iconPolls,
-    title: "Polls",
-    body: "Get a quick gut check from the team on design options.",
+    icon: iconPerformance,
+    title: "Performance",
+    body: "Review storage throughput and burst limits for bottlenecks.",
   },
   {
-    icon: iconResolve,
-    title: "Resolve comments",
-    body: "Mark comments as resolved to keep the conversation focused.",
+    icon: iconArchitecture,
+    title: "Architecture",
+    body: "Improve resilience and fault isolation across availability zones.",
   },
 ];
 
@@ -29,8 +26,8 @@ export function OrangeBanner() {
   return (
     <section className="lp-orange-banner">
       <div className="lp-orange-inner">
-        <p className="lp-orange-eyebrow">Best time here</p>
-        <h2>Better feedback at the right time.</h2>
+        <p className="lp-orange-eyebrow">Sample insights</p>
+        <h2>Real optimization opportunities</h2>
 
         <article className="lp-cloudhub-card">
           <div className="lp-cloudhub-top">
@@ -39,21 +36,21 @@ export function OrangeBanner() {
                 <img src={bannerCube} alt="" width={39} height={39} />
               </span>
               <div>
-                <strong>Cloudhub</strong>
-                <small>2m ago in Brand</small>
+                <strong>OptiCloud</strong>
+                <small>Sample data · Production</small>
               </div>
             </div>
             <button type="button" className="lp-pill-btn lp-pill-sm">
-              View post
+              View details
             </button>
           </div>
           <div className="lp-cloudhub-bottom">
             <div className="lp-avatar-stack">
-              <img src={avatar1} alt="" width={48} height={48} />
-              <img src={avatar2} alt="" width={48} height={48} />
-              <img src={avatar3} alt="" width={48} height={48} />
+              <img src={bannerCube} alt="" width={48} height={48} />
+              <img src={bannerCube} alt="" width={48} height={48} />
+              <img src={bannerCube} alt="" width={48} height={48} />
             </div>
-            <p>3 people are looking for feedback this week</p>
+            <p>3 active findings this week</p>
             <img className="lp-cloudhub-chevron" src={bannerChevron} alt="" width={34} height={34} />
           </div>
         </article>
