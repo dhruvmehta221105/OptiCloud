@@ -28,9 +28,9 @@ const columns = [
   {
     title: "Social",
     links: [
-      { label: "Dribbble", href: null },
-      { label: "Behance", href: null },
-      { label: "Discord", href: null },
+      { label: "GitHub", href: null },
+      { label: "LinkedIn", href: null },
+      { label: "Twitter", href: null },
     ],
   },
 ];
@@ -77,7 +77,7 @@ export function LandingFooter({ onNavigate }) {
           ))}
         </div>
       </div>
-      <p className="lp-footer-copy">All rights reserved.© 2024 DejectStudio</p>
+      <p className="lp-footer-copy">© 2026 OptiCloud. All rights reserved.</p>
     </footer>
   );
 }

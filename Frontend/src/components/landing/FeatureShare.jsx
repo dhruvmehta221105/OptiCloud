@@ -6,32 +6,30 @@ export function FeatureShare() {
     <section className="lp-feature" id="product">
       <div className="lp-feature-grid">
         <div className="lp-feature-copy">
-          <span className="lp-badge">Share</span>
-          <h2>Share anything you’re working on.</h2>
+          <span className="lp-badge">Analyze</span>
+          <h2>Scan your infrastructure for cost waste.</h2>
           <p>
-            Campsite has been instrumental in keeping designers aware of each others&apos;
-            work-in-progress in a way that was previously slowing us down. It&apos;s also one of
-            the only channels where.
+            OptiCloud reviews your Terraform and Docker configurations to surface unused resources, oversized instances, and configuration inefficiencies before they hit your bill.
           </p>
           <div className="lp-check-row">
             <span className="lp-check">
               <span className="lp-check-icon">
                 <img src={iconCheck} alt="" width={13} height={13} />
               </span>
-              Coded
+              Terraform analysis
             </span>
             <span className="lp-check">
               <span className="lp-check-icon">
                 <img src={iconCheck} alt="" width={13} height={13} />
               </span>
-              100% Secure
+              Read-only by design
             </span>
           </div>
           <a className="lp-see-works" href="#preview">
             <span className="lp-play">
               <img src={iconPlay} alt="" width={24} height={24} />
             </span>
-            See how it works
+            View the dashboard
           </a>
         </div>
 
