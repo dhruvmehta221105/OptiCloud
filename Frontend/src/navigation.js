@@ -1,5 +1,8 @@
 export const pagePaths = {
   Home: "/",
+  Login: "/login",
+  "Create account": "/create-account",
+  "Forgot password": "/forgot-password",
   Dashboard: "/dashboard",
   Projects: "/projects",
   Developers: "/developers",

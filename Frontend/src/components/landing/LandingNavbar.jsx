@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Developers", action: "Developers" },
 ];
 
-export function LandingNavbar({ onEnterApp, onNavigate }) {
+export function LandingNavbar({ onEnterApp, onLogin, onNavigate }) {
   const [open, setOpen] = useState(false);
 
   const handleNav = (link) => {
@@ -48,10 +48,10 @@ export function LandingNavbar({ onEnterApp, onNavigate }) {
         </nav>
 
         <div className="lp-nav-actions">
-          <button type="button" className="lp-text-btn" onClick={onEnterApp}>
+          <button type="button" className="lp-text-btn" onClick={onLogin}>
             Log in
           </button>
-          <button type="button" className="lp-pill-btn" onClick={onEnterApp}>
+          <button type="button" className="lp-pill-btn" onClick={onLogin}>
             Get started
           </button>
           <button
@@ -72,10 +72,10 @@ export function LandingNavbar({ onEnterApp, onNavigate }) {
                 {link.label}
               </button>
             ))}
-            <button type="button" className="lp-text-btn" onClick={() => { setOpen(false); onEnterApp(); }}>
+            <button type="button" className="lp-text-btn" onClick={() => { setOpen(false); onLogin(); }}>
               Log in
             </button>
-            <button type="button" className="lp-pill-btn" onClick={() => { setOpen(false); onEnterApp(); }}>
+            <button type="button" className="lp-pill-btn" onClick={() => { setOpen(false); onLogin(); }}>
               Get started
             </button>
           </div>

@@ -17,7 +17,7 @@ const orbitIcons = [
   { src: icon6, className: "lp-orbit lp-orbit-6", alt: "Integration" },
 ];
 
-export function Hero({ onEnterApp }) {
+export function Hero({ onEnterApp, onStartFree = onEnterApp }) {
   return (
     <section className="lp-hero" id="top">
       <div className="lp-hero-copy">
@@ -25,7 +25,7 @@ export function Hero({ onEnterApp }) {
         <p className="lp-hero-sub">
           Analyze Terraform and Docker configs, uncover over-provisioned resources, and get clear, AI-powered recommendations before they hit your AWS bill.
         </p>
-        <button type="button" className="lp-pill-btn lp-pill-lg" onClick={onEnterApp}>
+        <button type="button" className="lp-pill-btn lp-pill-lg" onClick={onStartFree}>
           Start for free
         </button>
         <p className="lp-hero-demo">
