@@ -1,12 +1,12 @@
 import dashboardPreview from "../../assets/landing/dashboard-preview.png";
 
-export function DashboardPreview({ onEnterApp }) {
+export function DashboardPreview({ onEnterApp, onStartFree = onEnterApp }) {
   return (
     <section className="lp-preview" id="preview">
       <div className="lp-preview-copy">
         <h2>Keep every one in the loop</h2>
         <p>All good things starts with a homepage. Get inspired without breaking your wallet.</p>
-        <button type="button" className="lp-pill-btn lp-pill-white" onClick={onEnterApp}>
+        <button type="button" className="lp-pill-btn lp-pill-white" onClick={onStartFree}>
           Start for free
         </button>
       </div>

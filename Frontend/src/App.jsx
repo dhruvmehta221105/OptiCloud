@@ -5,6 +5,7 @@ import { WorkspaceLayout } from "./components/layout/WorkspaceLayout.jsx";
 import { Home } from "./pages/Home.jsx";
 import { routes } from "./routes.jsx";
 import { ProjectDetails } from "./pages/ProjectDetails.jsx";
+import { Login } from "./pages/Login.jsx";
 
 function WorkspacePage({ page, component: Page }) {
   const { setPage, mobileOpen, setMobileOpen } = useNavigation();
@@ -26,6 +27,9 @@ function AppRoutes() {
       <SmoothScroll />
       <Routes>
       <Route path="/" element={<div className="app-shell app-shell-landing"><Home setPage={setPage} /></div>} />
+      <Route path="/login" element={<div className="app-shell app-shell-login"><Login /></div>} />
+      <Route path="/create-account" element={<div className="app-shell app-shell-login"><Login mode="create-account" /></div>} />
+      <Route path="/forgot-password" element={<div className="app-shell app-shell-login"><Login mode="forgot-password" /></div>} />
       {routes.map(({ path, url, component }) => (
         <Route key={url} path={url} element={<WorkspacePage page={path} component={component} />} />
       ))}
