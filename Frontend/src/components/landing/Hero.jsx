@@ -21,15 +21,15 @@ export function Hero({ onEnterApp, onStartFree = onEnterApp }) {
   return (
     <section className="lp-hero" id="top">
       <div className="lp-hero-copy">
-        <h1>Create, inspect, and apply synthetic surveillance broadly.</h1>
+        <h1>Catch the waste before it ships.</h1>
         <p className="lp-hero-sub">
-          Start with a stunning homepage. Stay motivated without hurting your pocket.
+          Analyze Terraform and Docker configs, uncover over-provisioned resources, and get clear, AI-powered recommendations before they hit your AWS bill.
         </p>
         <button type="button" className="lp-pill-btn lp-pill-lg" onClick={onStartFree}>
           Start for free
         </button>
         <p className="lp-hero-demo">
-          <span>Want to talk or get a live demo?</span>{" "}
+          <span>Want to see OptiCloud in action?</span>{" "}
           <button type="button" className="lp-inline-link" onClick={onEnterApp}>
             Get in touch →
           </button>

@@ -1,13 +1,10 @@
 import iconPlay from "../../assets/landing/icon-play.svg";
 import iconAdd from "../../assets/landing/icon-add.svg";
-import avatarBuzz from "../../assets/landing/avatar-buzz.png";
-import avatarGabriel from "../../assets/landing/avatar-gabriel.png";
-import avatarJochem from "../../assets/landing/avatar-jochem.png";
 
 const rows = [
-  { name: "Buzz Usborne", status: "Pending", avatar: avatarBuzz },
-  { name: "Gabriel Valdivia", status: "Done", avatar: avatarGabriel },
-  { name: "Jochem Dierx", status: "Requested", avatar: avatarJochem },
+  { name: "Oversized EC2 instances", status: "High", icon: null },
+  { name: "Unattached storage volumes", status: "Medium", icon: null },
+  { name: "Inefficient Docker layers", status: "Low", icon: null },
 ];
 
 export function FeatureFeedback() {
@@ -17,17 +14,17 @@ export function FeatureFeedback() {
         <div className="lp-feature-media">
           <div className="lp-feedback-card">
             <div className="lp-feedback-head">
-              <strong>Looking for feedback?</strong>
+              <strong>Sample findings</strong>
               <span className="lp-toggle" aria-hidden="true" />
             </div>
             <ul className="lp-feedback-list">
               {rows.map((row) => (
                 <li key={row.name}>
                   <span className="lp-feedback-person">
-                    <img src={row.avatar} alt="" width={43} height={43} />
+                    <span className="lp-feedback-icon">{row.name.charAt(0)}</span>
                     {row.name}
                   </span>
-                  <span className="lp-feedback-status">{row.status}</span>
+                  <span className="lp-feedback-status">{row.status} severity</span>
                 </li>
               ))}
               <li className="lp-feedback-add">
@@ -35,7 +32,7 @@ export function FeatureFeedback() {
                   <span className="lp-add-avatar">
                     <img src={iconAdd} alt="" width={24} height={24} />
                   </span>
-                  <span className="lp-add-label">Add More</span>
+                  <span className="lp-add-label">Add finding</span>
                 </span>
               </li>
             </ul>
@@ -43,18 +40,16 @@ export function FeatureFeedback() {
         </div>
 
         <div className="lp-feature-copy">
-          <span className="lp-badge">Feedback</span>
-          <h2>Better feedback at the right time.</h2>
+          <span className="lp-badge">Insights</span>
+          <h2>Infrastructure findings, prioritized by impact.</h2>
           <p>
-            Campsite has been instrumental in keeping designers aware of each others&apos;
-            work-in-progress in a way that was previously slowing us down. It&apos;s also one of
-            the only channels where.
+            Each finding is scored by potential savings and severity, so your team knows what to fix first — from oversized EC2 instances to unattached storage volumes.
           </p>
           <a className="lp-see-works" href="#preview">
             <span className="lp-play">
               <img src={iconPlay} alt="" width={24} height={24} />
             </span>
-            See how it works
+            See all findings
           </a>
         </div>
       </div>

@@ -21,7 +21,7 @@ const logos = [
 export function CustomerLogos() {
   return (
     <section className="lp-loved" id="integrations">
-      <h2>Loved By Designers At</h2>
+      <h2>Trusted by engineering teams</h2>
       <div className="lp-loved-grid">
         {logos.map((logo) => (
           <div className="lp-loved-cell" key={logo.alt}>
