@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Lenis from "@studio-freight/lenis";
 
 export function SmoothScroll({ enabled = true }) {
+  const location = useLocation();
+
   useEffect(() => {
     if (!enabled) return;
 
@@ -11,7 +14,7 @@ export function SmoothScroll({ enabled = true }) {
       direction: "vertical",
       gestureDirection: "vertical",
       smooth: true,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 1,
       infinite: false,
     });
@@ -23,11 +26,14 @@ export function SmoothScroll({ enabled = true }) {
 
     const rafId = { current: requestAnimationFrame(raf) };
 
+    // Scroll to top on route change, smoothly
+    lenis.scrollTo(0, { immediate: false, duration: 0.4 });
+
     return () => {
       cancelAnimationFrame(rafId.current);
       lenis.destroy();
     };
-  }, [enabled]);
+  }, [location, enabled]);
 
   return null;
 }
