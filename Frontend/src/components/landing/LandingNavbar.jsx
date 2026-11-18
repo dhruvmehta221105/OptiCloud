@@ -5,7 +5,7 @@ import chevronDown from "../../assets/landing/chevron-down.svg";
 
 const navLinks = [
   { label: "Product", href: "#product" },
-  { label: "Pricing", action: "Costs" },
+  { label: "Pricing", action: "Pricing" },
   { label: "Integrations", href: "#integrations" },
   { label: "Developers", action: "Developers" },
 ];

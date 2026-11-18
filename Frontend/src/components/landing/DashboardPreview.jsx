@@ -6,7 +6,7 @@ export function DashboardPreview({ onEnterApp, onStartFree = onEnterApp }) {
       <div className="lp-preview-copy">
         <h2>See your infrastructure in focus</h2>
         <p>Review cost, findings, and recommendations in one dashboard.</p>
-        <button type="button" className="lp-pill-btn lp-pill-white" onClick={onEnterApp}>
+        <button type="button" className="lp-pill-btn lp-pill-white" onClick={onStartFree}>
           Start for free
         </button>
       </div>

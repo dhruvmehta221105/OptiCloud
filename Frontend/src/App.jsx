@@ -7,6 +7,7 @@ import { Home } from "./pages/Home.jsx";
 import { routes } from "./routes.jsx";
 import { ProjectDetails } from "./pages/ProjectDetails.jsx";
 import { Login } from "./pages/Login.jsx";
+import { Pricing } from "./pages/Pricing.jsx";
 
 const pageVariants = {
   initial: { opacity: 0, y: 6 },
@@ -58,6 +59,14 @@ function AppRoutes() {
           element={
             <div className="app-shell app-shell-landing">
               <PageContent page="Home" setPage={setPage} component={Home} />
+            </div>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <div className="app-shell app-shell-landing">
+              <PageContent page="Pricing" setPage={setPage} component={Pricing} />
             </div>
           }
         />

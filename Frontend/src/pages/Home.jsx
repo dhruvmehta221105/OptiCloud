@@ -14,13 +14,14 @@ import { LandingFooter } from "../components/landing/LandingFooter.jsx";
 export function Home({ setPage }) {
   const enterApp = () => setPage("Dashboard");
   const openLogin = () => setPage("Login");
+  const openPricing = () => setPage("Pricing");
   const navigate = (destination) => setPage(destination);
 
   return (
     <div className="landing-page">
       <LandingNavbar onEnterApp={enterApp} onLogin={openLogin} onNavigate={navigate} />
       <main>
-        <Hero onEnterApp={enterApp} onStartFree={openLogin} />
+        <Hero onEnterApp={enterApp} onStartFree={openPricing} />
         <LogoCloud />
         <FeatureShare />
         <FeatureFeedback />
@@ -28,8 +29,8 @@ export function Home({ setPage }) {
         <AnalyticsSection />
         <Testimonials />
         <CustomerLogos />
-        <DashboardPreview onEnterApp={enterApp} onStartFree={openLogin} />
-        <FinalCTA onEnterApp={enterApp} onStartFree={openLogin} />
+        <DashboardPreview onEnterApp={enterApp} onStartFree={openPricing} />
+        <FinalCTA onEnterApp={enterApp} onStartFree={openPricing} />
       </main>
       <LandingFooter onNavigate={navigate} />
     </div>
